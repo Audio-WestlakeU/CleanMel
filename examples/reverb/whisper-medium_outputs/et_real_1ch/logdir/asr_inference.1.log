@@ -1,0 +1,173 @@
+# python3 utils/evaluate_whisper_inference.py --ngpu 1 --data_path_and_name_and_type ./examples/reverb/data/et_real_1ch/wav.scp --key_file ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/keys.1.scp --model_tag medium --model_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/models --output_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/output.1 --decode_options "{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}" 
+# Started at Thu Jan 23 04:41:56 PM CST 2025
+#
+/data/home/fangying/anaconda3/envs/torch2.4/bin/python3 utils/evaluate_whisper_inference.py --ngpu 1 --data_path_and_name_and_type ./examples/reverb/data/et_real_1ch/wav.scp --key_file ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/keys.1.scp --model_tag medium --model_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/models --output_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/output.1 --decode_options '{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}'
+2025-01-23 16:42:09,275 (evaluate_whisper_inference:106) INFO: len(info_list): 186
+2025-01-23 16:42:09,275 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:09,275 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c0206...
+2025-01-23 16:42:13,232 (evaluate_whisper_inference:112) INFO: results:  They also are another matter.
+2025-01-23 16:42:13,233 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:13,233 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c0207...
+2025-01-23 16:42:22,886 (evaluate_whisper_inference:112) INFO: results:  We would have to delay any change in production schedules, or else have people sitting around doing nothing, as both of them say.
+2025-01-23 16:42:22,886 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:22,886 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c0208...
+2025-01-23 16:42:29,367 (evaluate_whisper_inference:112) INFO: results:  But a United Auto Workers official says that advance notice is possible for major layoffs.
+2025-01-23 16:42:29,367 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:29,367 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020a...
+2025-01-23 16:42:36,853 (evaluate_whisper_inference:112) INFO: results:  The thrift cited a recent decision by the Federal Home Loan Bank Board that eliminated secondary reserves.
+2025-01-23 16:42:36,853 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:36,853 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020c...
+2025-01-23 16:42:45,183 (evaluate_whisper_inference:112) INFO: results:  In the year earlier quarter, land of Lincoln earned 1.6 million dollars or 53 cents a share.
+2025-01-23 16:42:45,184 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:45,184 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020f...
+2025-01-23 16:42:49,651 (evaluate_whisper_inference:112) INFO: results:  About 11% said new orders and production declined.
+2025-01-23 16:42:49,652 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:49,652 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020h...
+2025-01-23 16:42:53,681 (evaluate_whisper_inference:112) INFO: results:  A Kiddas spokesman declined to comment.
+2025-01-23 16:42:53,681 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:53,681 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020l...
+2025-01-23 16:42:56,341 (evaluate_whisper_inference:112) INFO: results:  It can't compete.
+2025-01-23 16:42:56,341 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:56,342 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020p...
+2025-01-23 16:43:00,880 (evaluate_whisper_inference:112) INFO: results:  Small investors will also be affected, traders said.
+2025-01-23 16:43:00,881 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:00,881 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020r...
+2025-01-23 16:43:08,638 (evaluate_whisper_inference:112) INFO: results:  But bigger players felt these rules limited their potential gains, and ability to get in and out of the market.
+2025-01-23 16:43:08,639 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:08,639 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020s...
+2025-01-23 16:43:17,569 (evaluate_whisper_inference:112) INFO: results:  For investors willing to take more risk, the nearby contract month, which traded without price limits, was one alternative.
+2025-01-23 16:43:17,569 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:17,569 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020t...
+2025-01-23 16:43:25,390 (evaluate_whisper_inference:112) INFO: results:  The major boost in operating earnings came from a 19% increase in premiums to $44.81 billion.
+2025-01-23 16:43:25,390 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:25,390 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020u...
+2025-01-23 16:43:30,608 (evaluate_whisper_inference:112) INFO: results:  Premium growth resulted primarily from rate increases on commercial liability lines.
+2025-01-23 16:43:30,608 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:30,608 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020v...
+2025-01-23 16:43:35,782 (evaluate_whisper_inference:112) INFO: results:  Claim losses increased 11% to $35.11 billion.
+2025-01-23 16:43:35,782 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:35,782 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020w...
+2025-01-23 16:43:43,907 (evaluate_whisper_inference:112) INFO: results:  First National, which was closed by Reguilexus Friday, had assets of $14.9 million.
+2025-01-23 16:43:43,907 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:43,907 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020x...
+2025-01-23 16:43:50,069 (evaluate_whisper_inference:112) INFO: results:  Its sole office is to reopen today as a branch of farmers' state.
+2025-01-23 16:43:50,070 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:50,070 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020y...
+2025-01-23 16:43:57,885 (evaluate_whisper_inference:112) INFO: results:  The FDIC arranged the deposit transfer because of difficulties in sorting out the failed bank's contingent liabilities.
+2025-01-23 16:43:57,885 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:57,885 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c020z...
+2025-01-23 16:44:03,612 (evaluate_whisper_inference:112) INFO: results:  Leaders of Japan's biggest economic and business organisations praised Akechi.
+2025-01-23 16:44:03,612 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:03,612 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c0210...
+2025-01-23 16:44:06,732 (evaluate_whisper_inference:112) INFO: results:  but private economists were restrained.
+2025-01-23 16:44:06,732 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:06,732 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c0211...
+2025-01-23 16:44:13,937 (evaluate_whisper_inference:112) INFO: results:  This isn't the kind of thing that will prove effective immediately once you get bank economists out.
+2025-01-23 16:44:13,937 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:13,937 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_far_room1_A_t21c0212...
+2025-01-23 16:44:22,445 (evaluate_whisper_inference:112) INFO: results:  It depends on how much of those measures they will be able to carry out within this fiscal year and how fast.
+2025-01-23 16:44:22,446 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:22,446 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c0201...
+2025-01-23 16:44:28,421 (evaluate_whisper_inference:112) INFO: results:  Hospital Corporation of America rose one and one quarter to 48 in active training.
+2025-01-23 16:44:28,421 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:28,421 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c0202...
+2025-01-23 16:44:35,473 (evaluate_whisper_inference:112) INFO: results:  The company's board approved a plan to shed 104 general hospitals to an employee-owned company.
+2025-01-23 16:44:35,473 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:35,473 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c0204...
+2025-01-23 16:44:40,745 (evaluate_whisper_inference:112) INFO: results:  It plans to use the cash to reduce debt and buy back stock.
+2025-01-23 16:44:40,745 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:40,745 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c0205...
+2025-01-23 16:44:47,908 (evaluate_whisper_inference:112) INFO: results:  Caterpillar Incorporated says it generally gives a year or more notice of closings.
+2025-01-23 16:44:47,909 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:47,909 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c0209...
+2025-01-23 16:44:55,101 (evaluate_whisper_inference:112) INFO: results:  The only reason companies don't want to announce it is it may hurt their stock price he contends.
+2025-01-23 16:44:55,101 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:55,101 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020b...
+2025-01-23 16:44:59,446 (evaluate_whisper_inference:112) INFO: results:  The company had accounted for the reserves as an asset.
+2025-01-23 16:44:59,448 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:59,448 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020d...
+2025-01-23 16:45:05,077 (evaluate_whisper_inference:112) INFO: results:  Production and new orders rose, though not as much as in April.
+2025-01-23 16:45:05,077 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:05,077 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020e...
+2025-01-23 16:45:12,154 (evaluate_whisper_inference:112) INFO: results:  About 34% of the agents said new orders rose, and 33% said production grew in May.
+2025-01-23 16:45:12,155 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:12,155 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020g...
+2025-01-23 16:45:18,884 (evaluate_whisper_inference:112) INFO: results:  The Goldman spokesman declined to comment beyond the investment banking firm's statement, announcing the agreement.
+2025-01-23 16:45:18,884 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:18,884 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020i...
+2025-01-23 16:45:25,159 (evaluate_whisper_inference:112) INFO: results:  Lawyers for the four individuals have consistently declined to comment on the Unicast suit.
+2025-01-23 16:45:25,159 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:25,159 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020j...
+2025-01-23 16:45:33,213 (evaluate_whisper_inference:112) INFO: results:  They draw former activists who don't want to forget solidarity and a new generation too young to remember it.
+2025-01-23 16:45:33,213 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:33,213 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020k...
+2025-01-23 16:45:38,711 (evaluate_whisper_inference:112) INFO: results:  The state tries to win back the young with scouting and holiday camps.
+2025-01-23 16:45:38,711 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:38,711 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020m...
+2025-01-23 16:45:44,060 (evaluate_whisper_inference:112) INFO: results:  Mr Johnson says local officials will now build low-rise units.
+2025-01-23 16:45:44,060 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:44,060 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020n...
+2025-01-23 16:45:51,999 (evaluate_whisper_inference:112) INFO: results:  The number of stories in a building, however, is not the major factor in the failure of public housing.
+2025-01-23 16:45:51,999 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:51,999 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020o...
+2025-01-23 16:45:57,351 (evaluate_whisper_inference:112) INFO: results:  Government control this and there is growing evidence to support that assertion.
+2025-01-23 16:45:57,351 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:57,351 (evaluate_whisper_inference:109) INFO: Processing t21_RealData_et_for_1ch_near_room1_A_t21c020q...
+2025-01-23 16:46:06,714 (evaluate_whisper_inference:112) INFO: results:  Daily price limits were in part intended to allow such investors to participate in the market by limiting their losses on any given day.
+2025-01-23 16:46:06,714 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:06,714 (evaluate_whisper_inference:109) INFO: Processing t22_RealData_et_for_1ch_far_room1_A_t22c0201...
+2025-01-23 16:46:11,632 (evaluate_whisper_inference:112) INFO: results:  Individuals can borrow as much as 50 million yen.
+2025-01-23 16:46:11,632 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:11,632 (evaluate_whisper_inference:109) INFO: Processing t22_RealData_et_for_1ch_far_room1_A_t22c0203...
+2025-01-23 16:46:20,238 (evaluate_whisper_inference:112) INFO: results:  Also, when leading stocks are used for collateral, consumer credit companies value them at 85 percent of their current price.
+2025-01-23 16:46:20,238 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:20,238 (evaluate_whisper_inference:109) INFO: Processing t22_RealData_et_for_1ch_far_room1_A_t22c0204...
+2025-01-23 16:46:29,782 (evaluate_whisper_inference:112) INFO: results:  The whole game of investing is a patient game if you're going to make any money at it, Mr. Benham says now.
+2025-01-23 16:46:29,782 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:29,782 (evaluate_whisper_inference:109) INFO: Processing t22_RealData_et_for_1ch_far_room1_A_t22c0207...
+Traceback (most recent call last):
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 205, in <module>
+    main()
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 201, in main
+    inference(**kwargs)
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 111, in inference
+    results = speech2text(os.path.abspath(audio_file.strip()), **decode_options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 55, in __call__
+    result = self.model.transcribe(speech, **decode_options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/transcribe.py", line 279, in transcribe
+    result: DecodingResult = decode_with_fallback(mel_segment)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/transcribe.py", line 195, in decode_with_fallback
+    decode_result = model.decode(segment, options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 824, in decode
+    result = DecodingTask(model, options).run(mel)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 737, in run
+    tokens, sum_logprobs, no_speech_probs = self._main_loop(audio_features, tokens)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 687, in _main_loop
+    logits = self.inference.logits(tokens, audio_features)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 163, in logits
+    return self.model.decoder(tokens, audio_features, kv_cache=self.kv_cache)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/model.py", line 242, in forward
+    x = block(x, xa, mask=self.mask, kv_cache=kv_cache)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/model.py", line 169, in forward
+    x = x + self.cross_attn(self.cross_attn_ln(x), xa, kv_cache=kv_cache)[0]
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1553, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1562, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/model.py", line 41, in forward
+    return super().forward(x.float()).type(x.dtype)
+KeyboardInterrupt

@@ -1,0 +1,174 @@
+config: conf/tuning/train_lm_transformer.yaml
+print_config: false
+log_level: INFO
+dry_run: false
+iterator_type: sequence
+output_dir: exp2/lm_train_lm_transformer_en_char
+ngpu: 1
+seed: 0
+num_workers: 1
+num_att_plot: 3
+dist_backend: nccl
+dist_init_method: env://
+dist_world_size: 4
+dist_rank: 0
+local_rank: 0
+dist_master_addr: localhost
+dist_master_port: 50460
+dist_launcher: null
+multiprocessing_distributed: true
+cudnn_enabled: true
+cudnn_benchmark: false
+cudnn_deterministic: true
+collect_stats: false
+write_collected_feats: false
+max_epoch: 25
+patience: null
+val_scheduler_criterion:
+- valid
+- loss
+early_stopping_criterion:
+- valid
+- loss
+- min
+best_model_criterion:
+-   - valid
+    - loss
+    - min
+keep_nbest_models: 10
+grad_clip: 5.0
+grad_clip_type: 2.0
+grad_noise: false
+accum_grad: 2
+no_forward_run: false
+resume: true
+train_dtype: float32
+use_amp: false
+log_interval: null
+pretrain_path: null
+init_param: []
+num_iters_per_epoch: null
+batch_size: 20
+valid_batch_size: null
+batch_bins: 350000
+valid_batch_bins: null
+train_shape_file:
+- exp2/lm_stats_char/train/text_shape.char
+valid_shape_file:
+- exp2/lm_stats_char/valid/text_shape.char
+batch_type: numel
+valid_batch_type: null
+fold_length:
+- 150
+sort_in_batch: descending
+sort_batch: descending
+multiple_iterator: false
+chunk_length: 500
+chunk_shift_ratio: 0.5
+num_cache_chunks: 1024
+train_data_path_and_name_and_type:
+-   - dump/raw/lm_train.txt
+    - text
+    - text
+valid_data_path_and_name_and_type:
+-   - dump/raw/dt_mult_1ch/text
+    - text
+    - text
+allow_variable_data_keys: false
+max_cache_size: 0.0
+max_cache_fd: 32
+valid_max_cache_size: null
+optim: adam
+optim_conf:
+    lr: 0.001
+scheduler: warmuplr
+scheduler_conf:
+    warmup_steps: 25000
+token_list:
+- <blank>
+- <unk>
+- <space>
+- E
+- T
+- A
+- N
+- I
+- O
+- S
+- R
+- H
+- L
+- D
+- C
+- U
+- M
+- P
+- F
+- G
+- Y
+- W
+- B
+- V
+- K
+- .
+- X
+- ''''
+- J
+- Q
+- Z
+- <NOISE>
+- ','
+- '-'
+- '"'
+- '*'
+- ':'
+- (
+- )
+- '?'
+- '!'
+- '&'
+- ;
+- '1'
+- '2'
+- '0'
+- /
+- $
+- '{'
+- '}'
+- '8'
+- '9'
+- '6'
+- '3'
+- '5'
+- '7'
+- '4'
+- '~'
+- '`'
+- _
+- <*IN*>
+- <*MR.*>
+- \
+- ^
+- <sos/eos>
+init: null
+model_conf:
+    ignore_id: 0
+use_preprocessor: true
+token_type: char
+bpemodel: null
+non_linguistic_symbols: data/nlsyms.txt
+cleaner: null
+g2p: null
+lm: transformer
+lm_conf:
+    pos_enc: null
+    embed_unit: 128
+    att_unit: 512
+    head: 8
+    unit: 2048
+    layer: 16
+    dropout_rate: 0.1
+required:
+- output_dir
+- token_list
+distributed: true

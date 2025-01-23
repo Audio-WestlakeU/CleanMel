@@ -1,0 +1,5 @@
+*.pth
+examples/*/*/decode*
+logmel_test
+examples/realman/results
+*.flac

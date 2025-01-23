@@ -1,0 +1,253 @@
+config: conf/tuning/train_asr_transformer4_voicefixer.yaml
+print_config: false
+log_level: INFO
+dry_run: false
+iterator_type: sequence
+output_dir: exp_voicefixer/asr_train_asr_transformer4_voicefixer_raw_en_char_sp
+ngpu: 1
+seed: 0
+num_workers: 1
+num_att_plot: 3
+dist_backend: nccl
+dist_init_method: env://
+dist_world_size: null
+dist_rank: null
+local_rank: 0
+dist_master_addr: null
+dist_master_port: null
+dist_launcher: null
+multiprocessing_distributed: false
+unused_parameters: false
+sharded_ddp: false
+cudnn_enabled: true
+cudnn_benchmark: false
+cudnn_deterministic: true
+collect_stats: false
+write_collected_feats: false
+max_epoch: 50
+patience: null
+val_scheduler_criterion:
+- valid
+- loss
+early_stopping_criterion:
+- valid
+- loss
+- min
+best_model_criterion:
+-   - valid
+    - acc
+    - max
+keep_nbest_models: 10
+nbest_averaging_interval: 0
+grad_clip: 5.0
+grad_clip_type: 2.0
+grad_noise: false
+accum_grad: 1
+no_forward_run: false
+resume: true
+train_dtype: float32
+use_amp: false
+log_interval: null
+use_matplotlib: true
+use_tensorboard: true
+create_graph_in_tensorboard: false
+use_wandb: false
+wandb_project: null
+wandb_id: null
+wandb_entity: null
+wandb_name: null
+wandb_model_log_interval: -1
+detect_anomaly: false
+pretrain_path: null
+init_param: []
+ignore_init_mismatch: false
+freeze_param: []
+num_iters_per_epoch: null
+batch_size: 20
+valid_batch_size: null
+batch_bins: 44000000
+valid_batch_bins: null
+train_shape_file:
+- exp_voicefixer/asr_stats_raw_en_char_sp/train/speech_shape
+- exp_voicefixer/asr_stats_raw_en_char_sp/train/text_shape.char
+valid_shape_file:
+- exp_voicefixer/asr_stats_raw_en_char_sp/valid/speech_shape
+- exp_voicefixer/asr_stats_raw_en_char_sp/valid/text_shape.char
+batch_type: numel
+valid_batch_type: null
+fold_length:
+- 80000
+- 150
+sort_in_batch: descending
+sort_batch: descending
+multiple_iterator: false
+chunk_length: 500
+chunk_shift_ratio: 0.5
+num_cache_chunks: 1024
+chunk_excluded_key_prefixes: []
+train_data_path_and_name_and_type:
+-   - dump/raw/tr_wsjcam0_si284_sp/wav.scp
+    - speech
+    - sound
+-   - dump/raw/tr_wsjcam0_si284_sp/text
+    - text
+    - text
+valid_data_path_and_name_and_type:
+-   - dump/raw/dt_mult_1ch/wav.scp
+    - speech
+    - sound
+-   - dump/raw/dt_mult_1ch/text
+    - text
+    - text
+allow_variable_data_keys: false
+max_cache_size: 0.0
+max_cache_fd: 32
+valid_max_cache_size: null
+exclude_weight_decay: false
+exclude_weight_decay_conf: {}
+optim: adam
+optim_conf:
+    lr: 0.005
+scheduler: warmuplr
+scheduler_conf:
+    warmup_steps: 30000
+token_list:
+- <blank>
+- <unk>
+- <space>
+- E
+- T
+- A
+- O
+- N
+- I
+- S
+- R
+- H
+- L
+- D
+- C
+- U
+- M
+- P
+- F
+- G
+- Y
+- B
+- W
+- V
+- K
+- .
+- ''''
+- X
+- Q
+- J
+- <NOISE>
+- Z
+- ','
+- '-'
+- '"'
+- '*'
+- ':'
+- (
+- )
+- '?'
+- '!'
+- '&'
+- ;
+- /
+- '{'
+- '}'
+- '~'
+- '`'
+- _
+- <*IN*>
+- <*MR.*>
+- <sos/eos>
+init: xavier_uniform
+input_size: null
+ctc_conf:
+    dropout_rate: 0.0
+    ctc_type: builtin
+    reduce: true
+    ignore_nan_grad: null
+    zero_infinity: true
+joint_net_conf: null
+use_preprocessor: true
+token_type: char
+bpemodel: null
+non_linguistic_symbols: data/nlsyms.txt
+cleaner: null
+g2p: null
+speech_volume_normalize: 1.0
+rir_scp: data/reverb_rir_single/wav.scp
+rir_apply_prob: 1.0
+noise_scp: data/reverb_noise_single/wav.scp
+noise_apply_prob: 1.0
+noise_db_range: '12_17'
+short_noise_thres: 0.5
+aux_ctc_tasks: []
+frontend: default
+frontend_conf:
+    n_fft: 2048
+    win_length: 2048
+    hop_length: 441
+    n_mels: 128
+    htk: true
+    fs: 44.1k
+specaug: specaug
+specaug_conf:
+    apply_time_warp: true
+    time_warp_window: 5
+    time_warp_mode: bicubic
+    apply_freq_mask: true
+    freq_mask_width_range:
+    - 0
+    - 30
+    num_freq_mask: 2
+    apply_time_mask: true
+    time_mask_width_range:
+    - 0
+    - 40
+    num_time_mask: 2
+normalize: utterance_mvn
+normalize_conf:
+    norm_means: true
+    norm_vars: false
+    eps: 1.0e-20
+model: espnet
+model_conf:
+    ctc_weight: 0.3
+    lsm_weight: 0.1
+    length_normalized_loss: false
+preencoder: null
+preencoder_conf: {}
+encoder: transformer
+encoder_conf:
+    output_size: 256
+    attention_heads: 4
+    linear_units: 2048
+    num_blocks: 12
+    dropout_rate: 0.1
+    positional_dropout_rate: 0.1
+    attention_dropout_rate: 0.0
+    input_layer: conv2d
+    normalize_before: true
+postencoder: null
+postencoder_conf: {}
+decoder: transformer
+decoder_conf:
+    attention_heads: 4
+    linear_units: 2028
+    num_blocks: 6
+    dropout_rate: 0.1
+    positional_dropout_rate: 0.1
+    self_attention_dropout_rate: 0.0
+    src_attention_dropout_rate: 0.0
+preprocessor: default
+preprocessor_conf: {}
+required:
+- output_dir
+- token_list
+version: '202301'
+distributed: false

@@ -1,0 +1,140 @@
+# python3 utils/evaluate_whisper_inference.py --ngpu 1 --data_path_and_name_and_type ./examples/reverb/data/et_real_1ch/wav.scp --key_file ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/keys.2.scp --model_tag medium --model_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/models --output_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/output.2 --decode_options "{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}" 
+# Started at Thu Jan 23 04:41:56 PM CST 2025
+#
+/data/home/fangying/anaconda3/envs/torch2.4/bin/python3 utils/evaluate_whisper_inference.py --ngpu 1 --data_path_and_name_and_type ./examples/reverb/data/et_real_1ch/wav.scp --key_file ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/keys.2.scp --model_tag medium --model_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/models --output_dir ./examples/reverb/whisper-medium_outputs/et_real_1ch/logdir/output.2 --decode_options '{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}'
+2025-01-23 16:42:09,875 (evaluate_whisper_inference:106) INFO: len(info_list): 186
+2025-01-23 16:42:09,875 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:09,875 (evaluate_whisper_inference:109) INFO: Processing t25_RealData_et_for_1ch_near_room1_A_t25c020o...
+2025-01-23 16:42:19,965 (evaluate_whisper_inference:112) INFO: results:  In New York Stock Exchange Composite Trading yesterday, United Cable closed $23.875 up $1.75.
+2025-01-23 16:42:19,966 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:19,966 (evaluate_whisper_inference:109) INFO: Processing t25_RealData_et_for_1ch_near_room1_A_t25c020p...
+2025-01-23 16:42:28,320 (evaluate_whisper_inference:112) INFO: results:  In national over-the-counter trading, United Artists closed at $24.50 on change.
+2025-01-23 16:42:28,320 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:28,320 (evaluate_whisper_inference:109) INFO: Processing t25_RealData_et_for_1ch_near_room1_A_t25c020r...
+2025-01-23 16:42:34,230 (evaluate_whisper_inference:112) INFO: results:  Furniture sales fell 0.5% after rising 0.2%.
+2025-01-23 16:42:34,230 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:34,230 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c0205...
+2025-01-23 16:42:41,611 (evaluate_whisper_inference:112) INFO: results:  They didn't participate much in the 1987 bull market and most fell still further in the crash.
+2025-01-23 16:42:41,611 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:41,611 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c0209...
+2025-01-23 16:42:46,330 (evaluate_whisper_inference:112) INFO: results:  Both companies are Los Angeles-based diversified investment companies.
+2025-01-23 16:42:46,330 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:46,330 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020a...
+2025-01-23 16:42:55,065 (evaluate_whisper_inference:112) INFO: results:  In the current fiscal year, said Mr. Schoen, the company expects capital expenditures to reach $40 million.
+2025-01-23 16:42:55,066 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:42:55,066 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020b...
+2025-01-23 16:43:05,032 (evaluate_whisper_inference:112) INFO: results:  HMA already has purchased one hospital in Texas, he said, and it expects to close on a second in February in South Carolina.
+2025-01-23 16:43:05,033 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:05,033 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020c...
+2025-01-23 16:43:13,113 (evaluate_whisper_inference:112) INFO: results:  He said the company might make one or two hospital purchases this fiscal year that haven't yet been announced.
+2025-01-23 16:43:13,113 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:13,113 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020d...
+2025-01-23 16:43:23,719 (evaluate_whisper_inference:112) INFO: results:  Investigators are looking into factors other than weather in the Denver crash of a Continental Airlines jet Sunday, in which 27 were killed and 55 hurt.
+2025-01-23 16:43:23,719 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:23,719 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020e...
+2025-01-23 16:43:29,240 (evaluate_whisper_inference:112) INFO: results:  Witnesses said the jet veered before a wing hit the ground.
+2025-01-23 16:43:29,240 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:29,240 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020f...
+2025-01-23 16:43:38,094 (evaluate_whisper_inference:112) INFO: results:  Separately, hearings began into the August 16th crash of a Northwest Airlines jet that killed 156 near Detroit.
+2025-01-23 16:43:38,094 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:38,094 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020h...
+2025-01-23 16:43:44,207 (evaluate_whisper_inference:112) INFO: results:  It said it is negotiating the sale of certain assets of the brokerage unit.
+2025-01-23 16:43:44,207 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:44,207 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020i...
+2025-01-23 16:43:52,481 (evaluate_whisper_inference:112) INFO: results:  The parent company added that it may seek other business opportunities subject to the availability of financing which may not be available.
+2025-01-23 16:43:52,481 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:52,481 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020l...
+2025-01-23 16:43:59,091 (evaluate_whisper_inference:112) INFO: results:  When the merger was completed, the combined companies had about 38,000 workers worldwide.
+2025-01-23 16:43:59,091 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:43:59,091 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020m...
+2025-01-23 16:44:04,983 (evaluate_whisper_inference:112) INFO: results:  Another eight Singer officers were given severance benefits equal to a year's salary.
+2025-01-23 16:44:04,983 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:04,983 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020o...
+2025-01-23 16:44:12,013 (evaluate_whisper_inference:112) INFO: results:  The severance package for these employees is estimated at $4.3 million.
+2025-01-23 16:44:12,013 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:12,013 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020p...
+2025-01-23 16:44:16,847 (evaluate_whisper_inference:112) INFO: results:  CityCorp entered the money transfer business early this year.
+2025-01-23 16:44:16,848 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:16,848 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020r...
+2025-01-23 16:44:22,702 (evaluate_whisper_inference:112) INFO: results:  So far, it is said it signed only 1,500 agents.
+2025-01-23 16:44:22,702 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:22,702 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020s...
+2025-01-23 16:44:32,264 (evaluate_whisper_inference:112) INFO: results:  Of the total face amount outstanding of 12 Western Union debt series, 18.6 percent have been tended as of Thursday.
+2025-01-23 16:44:32,264 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:32,264 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020t...
+2025-01-23 16:44:38,397 (evaluate_whisper_inference:112) INFO: results:  The swap offer requires at least 80% of the total be tendered.
+2025-01-23 16:44:38,397 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:38,397 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020u...
+2025-01-23 16:44:42,981 (evaluate_whisper_inference:112) INFO: results:  Western Union said it may again extend its deadline.
+2025-01-23 16:44:42,981 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:42,981 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020w...
+2025-01-23 16:44:50,642 (evaluate_whisper_inference:112) INFO: results:  This is a slower rate of growth than in the 1970s, when households grew twice as fast as the population.
+2025-01-23 16:44:50,642 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:50,642 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020x...
+2025-01-23 16:44:57,081 (evaluate_whisper_inference:112) INFO: results:  Back then, however, the growth was mostly among single people, single parents, or young families.
+2025-01-23 16:44:57,081 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:44:57,081 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020y...
+2025-01-23 16:45:02,716 (evaluate_whisper_inference:112) INFO: results:  Now household growth is concentrated among married couples and middle-aged groups.
+2025-01-23 16:45:02,716 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:02,716 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c020z...
+2025-01-23 16:45:11,186 (evaluate_whisper_inference:112) INFO: results:  The bullish market should help the pricing of a new railway bond to be launched today at the Bundesbank on Friday.
+2025-01-23 16:45:11,186 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:11,186 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c0210...
+2025-01-23 16:45:21,582 (evaluate_whisper_inference:112) INFO: results:  Traders expect a 10-year issue to total between 1 billion marks, $593.1 million, and 1.5 billion marks.
+2025-01-23 16:45:21,583 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:21,583 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c0211...
+2025-01-23 16:45:29,337 (evaluate_whisper_inference:112) INFO: results:  Estimates on the yield range from 6 1⁄2% to 6 5⁄8%.
+2025-01-23 16:45:29,338 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:29,338 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c0212...
+2025-01-23 16:45:37,130 (evaluate_whisper_inference:112) INFO: results:  Food prices fell by 0.1% in October from September, after increasing 1.1% in September.
+2025-01-23 16:45:37,131 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:37,131 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c0213...
+2025-01-23 16:45:43,026 (evaluate_whisper_inference:112) INFO: results:  Energy prices dropped 1% after a 3.7% decline the previous month.
+2025-01-23 16:45:43,026 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:43,026 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_far_room1_A_t36c0214...
+2025-01-23 16:45:50,806 (evaluate_whisper_inference:112) INFO: results:  And prices of capital equipment fell by 0.4% after rising 0.7% the month before.
+2025-01-23 16:45:50,806 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:50,806 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_near_room1_A_t36c0201...
+2025-01-23 16:45:57,361 (evaluate_whisper_inference:112) INFO: results:  Until yesterday, a few of the bank stocks had moved much above their October 30th lows.
+2025-01-23 16:45:57,361 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:45:57,361 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_near_room1_A_t36c0202...
+2025-01-23 16:46:06,305 (evaluate_whisper_inference:112) INFO: results:  These issues represent more than a third of the market capital of Nasdaq, but are slow and lethargic traders.
+2025-01-23 16:46:06,305 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:06,305 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_near_room1_A_t36c0203...
+2025-01-23 16:46:11,213 (evaluate_whisper_inference:112) INFO: results:  Many days, most of these issues don't trade at all.
+2025-01-23 16:46:11,213 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:11,213 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_near_room1_A_t36c0204...
+2025-01-23 16:46:21,968 (evaluate_whisper_inference:112) INFO: results:  Analysts long had contended the lowest price stocks on NASDAQ are bank and thrift issues which collapsed over a year ago.
+2025-01-23 16:46:21,968 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:21,968 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_near_room1_A_t36c0206...
+2025-01-23 16:46:28,716 (evaluate_whisper_inference:112) INFO: results:  Until yesterday, however, there was little indication of price movement among the banking issues.
+2025-01-23 16:46:28,716 (evaluate_whisper_inference:108) INFO: 
+2025-01-23 16:46:28,716 (evaluate_whisper_inference:109) INFO: Processing t36_RealData_et_for_1ch_near_room1_A_t36c0207...
+Traceback (most recent call last):
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 205, in <module>
+    main()
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 201, in main
+    inference(**kwargs)
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 111, in inference
+    results = speech2text(os.path.abspath(audio_file.strip()), **decode_options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 55, in __call__
+    result = self.model.transcribe(speech, **decode_options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/transcribe.py", line 279, in transcribe
+    result: DecodingResult = decode_with_fallback(mel_segment)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/transcribe.py", line 195, in decode_with_fallback
+    decode_result = model.decode(segment, options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 824, in decode
+    result = DecodingTask(model, options).run(mel)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 737, in run
+    tokens, sum_logprobs, no_speech_probs = self._main_loop(audio_features, tokens)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 703, in _main_loop
+    tokens, completed = self.decoder.update(tokens, logits, sum_logprobs)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/decoding.py", line 343, in update
+    new_logprob = (sum_logprobs[idx] + logprob).item()
+KeyboardInterrupt

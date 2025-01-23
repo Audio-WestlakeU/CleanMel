@@ -1,0 +1,27 @@
+# python3 utils/evaluate_whisper_inference.py --ngpu 1 --data_path_and_name_and_type ./examples/chime4/data/et05_simu_isolated_1ch_track/wav.scp --key_file ./examples/chime4/whisper-medium_outputs/et05_simu_isolated_1ch_track/logdir/keys.1.scp --model_tag medium --model_dir /data/home/fangying/espnet/egs2/reverb/asr1/whisper-medium_outputs/et_real_1ch/models/medium.pt --output_dir ./examples/chime4/whisper-medium_outputs/et05_simu_isolated_1ch_track/logdir/output.1 --decode_options "{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}" 
+# Started at Mon Oct 28 11:40:53 AM CST 2024
+#
+/data/home/fangying/anaconda3/envs/torch2.4/bin/python3 utils/evaluate_whisper_inference.py --ngpu 1 --data_path_and_name_and_type ./examples/chime4/data/et05_simu_isolated_1ch_track/wav.scp --key_file ./examples/chime4/whisper-medium_outputs/et05_simu_isolated_1ch_track/logdir/keys.1.scp --model_tag medium --model_dir /data/home/fangying/espnet/egs2/reverb/asr1/whisper-medium_outputs/et_real_1ch/models/medium.pt --output_dir ./examples/chime4/whisper-medium_outputs/et05_simu_isolated_1ch_track/logdir/output.1 --decode_options '{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}'
+/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/__init__.py:150: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(fp, map_location=device)
+2024-10-28 11:41:04,365 (evaluate_whisper_inference:106) INFO: len(info_list): 660
+2024-10-28 11:41:04,365 (evaluate_whisper_inference:108) INFO: 
+2024-10-28 11:41:04,365 (evaluate_whisper_inference:109) INFO: Processing F05_440C0202_BUS_SIMU...
+Traceback (most recent call last):
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 203, in <module>
+    main()
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 199, in main
+    inference(**kwargs)
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 111, in inference
+    results = speech2text(str(key), os.path.abspath(audio_file.strip()), **decode_options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/data/home/fangying/InASR/utils/evaluate_whisper_inference.py", line 55, in __call__
+    result = self.model.transcribe(name, speech, **decode_options)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/transcribe.py", line 135, in transcribe
+    mel = log_mel_spectrogram(name, audio, model.dims.n_mels, padding=N_SAMPLES)
+  File "/data/home/fangying/anaconda3/envs/torch2.4/lib/python3.10/site-packages/whisper/audio.py", line 163, in log_mel_spectrogram
+    if 'CHIME' not in self.base_mels_path:
+NameError: name 'self' is not defined
+# Accounting: time=11 threads=1
+# Ended (code 1) at Mon Oct 28 11:41:04 AM CST 2024, elapsed time 11 seconds
