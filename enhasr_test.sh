@@ -2,7 +2,7 @@
 ###
  # @Author: FnoY fangying@westlake.edu.cn
  # @LastEditors: FnoY0723 fangying@westlake.edu.cn
- # @LastEditTime: 2025-01-16 18:29:29
+ # @LastEditTime: 2025-01-24 20:04:46
  # @FilePath: /InASR/enhasr_test.sh
 ### 
 set -e
@@ -13,13 +13,13 @@ echo "Processing ${mel_path}"
 
 cd /data/home/fangying/InASR/
 
-echo ""
-echo "Testing on RealMan lowsnr"
-./examples/realman/codes/test.sh "${mel_path}" "lowsnr"
+# echo ""
+# echo "Testing on RealMan lowsnr"
+# ./examples/realman/codes/test.sh "${mel_path}" "lowsnr"
 
-echo ""
-echo "Testing on WenetSpeech"
-./examples/wenetspeech/test.sh "${mel_path}"
+# echo ""
+# echo "Testing on WenetSpeech"
+# ./examples/wenetspeech/test.sh "${mel_path}"
 
 echo ""
 echo "Testing on CHiME4"

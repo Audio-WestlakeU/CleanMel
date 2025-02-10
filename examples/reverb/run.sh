@@ -2,7 +2,7 @@
 ###
  # @Author: FnoY fangying@westlake.edu.cn
  # @LastEditors: FnoY0723 fangying@westlake.edu.cn
- # @LastEditTime: 2025-01-21 14:49:00
+ # @LastEditTime: 2025-02-10 10:27:28
  # @FilePath: /InASR/examples/reverb/run.sh
 ### 
 
@@ -30,8 +30,8 @@ min() {
   echo "${a}"
 }
 
-# asr_exp="./examples/reverb/asr_train_asr_transformer4_raw_en_char_sp"
-asr_exp="./examples/reverb/asr_train_asr_transformer4_voicefixer_raw_en_char_sp"
+asr_exp="./examples/reverb/asr_train_asr_transformer4_raw_en_char_sp"
+# asr_exp="./examples/reverb/asr_train_asr_transformer4_voicefixer_raw_en_char_sp"
 lm_exp="./examples/reverb/lm_train_lm_transformer_en_char"
 inference_config=./examples/reverb/decode.yaml
 data_feats=./examples/reverb/data

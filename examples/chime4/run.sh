@@ -24,8 +24,8 @@ min() {
   echo "${a}"
 }
 
-# asr_exp="./examples/chime4/asr_train_asr_e_branchformer_e10_mlp1024_linear1024_macaron_lr1e-3_warmup25k_raw_en_char_sp"
-asr_exp="./examples/chime4/asr_train_asr_e_branchformer_voicefixer_raw_en_char_sp"
+asr_exp="./examples/chime4/asr_train_asr_e_branchformer_e10_mlp1024_linear1024_macaron_lr1e-3_warmup25k_raw_en_char_sp"
+# asr_exp="./examples/chime4/asr_train_asr_e_branchformer_voicefixer_raw_en_char_sp"
 lm_exp="./examples/chime4/lm_train_lm_transformer_en_char"
 inference_config=./examples/chime4/decode_asr.yaml
 data_feats=./examples/chime4/data

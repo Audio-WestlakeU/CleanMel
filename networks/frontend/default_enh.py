@@ -105,8 +105,7 @@ class DefaultFrontend(AbsFrontend):
         # self.base_mels_path = "/data/home/fangying/enh_data/96-96-10-pad0/log_mel_norm__et_real_1ch"
         # self.base_mels_path = "/data/home/fangying/sn_enh_mel/CHIME_MFSN_eps100/simu"
 
-        self.base_mels_path = "/data/home/fangying/projects/voicefixer/reverb_et_simu/denoised_npy"
-        # self.base_mels_path = "/data/home/fangying/enh_data/fullband_norm_enhanced/reverb_real_dt"
+        self.base_mels_path = "/data/home/fangying/sn_enh_mel/mels/8xCleanMel_Hid96_offline_mrm_weightavg89-99"
         # self.base_mels_path = "/data/home/fangying/enh_data/reverb_dt_real"
         # self.base_mels_path = "/data/home/fangying/enh_data/reverb_enhanced/log-mel/logmel-et_real_1ch_"
         # self.base_mels_path = "/data/home/fangying/enh_data/en-asr-offline/mel_log_offline/log_mel_dt_real_1ch"
@@ -155,7 +154,7 @@ class DefaultFrontend(AbsFrontend):
         # input_stft = torch.stft(input, 400, 160, window=torch.hann_window(400).to(input.device), onesided=True, return_complex=True)
         # 4. STFT -> Power spectrum
         # h: ComplexTensor(B, T, F) -> torch.Tensor(B, T, F)
-        input_power = (input_stft.real**2 + input_stft.imag**2).pow(0.5)
+        input_power = input_stft.real**2 + input_stft.imag**2
         # np.save("/data/home/fangying/InASR/logmel_test/default_stft_t21_RealData_et_for_1ch_far_room1_A_t21c0206.npy", input_power.numpy())
        
         # 5. Feature transform e.g. Stft -> Log-Mel-Fbank
@@ -168,22 +167,22 @@ class DefaultFrontend(AbsFrontend):
         logging.info(f'input_feats: {input_feats}')
         logging.info(f'input_feats: {input_feats[0].max()}, {input_feats[0].min()}')
 
-        # if 'room' in name:
-        #     if 'REVERB' not in self.base_mels_path:
-        #         self.base_mels_path = os.path.join(self.base_mels_path, 'REVERB')
-        # elif 'room' not in name and ('REAL' in name or 'SIMU' in name):
-        #     if 'CHIME' not in self.base_mels_path:
-        #         self.base_mels_path = os.path.join(self.base_mels_path, 'CHIME')
-        # elif 'CH0' in name:
-        #     if 'RealMAN' not in self.base_mels_path:
-        #         self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN')
-        #         # self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN_highsnr')
-        # elif 'MEETING' in name:
-        #     if 'WenetSpeech' not in self.base_mels_path:
-        #         self.base_mels_path = os.path.join(self.base_mels_path, 'WenetSpeech')
-        # else:
-        #     if 'HKUST' not in self.base_mels_path:
-        #         self.base_mels_path = os.path.join(self.base_mels_path, 'HKUST')
+        if 'room' in name:
+            if 'REVERB' not in self.base_mels_path:
+                self.base_mels_path = os.path.join(self.base_mels_path, 'REVERB')
+        elif 'room' not in name and ('REAL' in name or 'SIMU' in name):
+            if 'CHIME' not in self.base_mels_path:
+                self.base_mels_path = os.path.join(self.base_mels_path, 'CHIME')
+        elif 'CH0' in name:
+            if 'RealMAN' not in self.base_mels_path:
+                self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN')
+                # self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN_highsnr')
+        elif 'MEETING' in name:
+            if 'WenetSpeech' not in self.base_mels_path:
+                self.base_mels_path = os.path.join(self.base_mels_path, 'WenetSpeech')
+        else:
+            if 'HKUST' not in self.base_mels_path:
+                self.base_mels_path = os.path.join(self.base_mels_path, 'HKUST')
         
         logging.info(f"self.base_mels_path: {self.base_mels_path}")
         ######################################## ON CHIME-4
@@ -207,8 +206,6 @@ class DefaultFrontend(AbsFrontend):
             mel_tensor = torch.from_numpy(mel).to(input_feats.device).reshape(self.n_mels,1,-1).permute(1,2,0)
             # outdir = "/data/home/fangying/espnet/egs2/chime4/asr1/exp_branchformer_utterance_mvn"
             # save_plot(mel_tensor.squeeze().cpu(),'{}/logmel_{}.png'.format(outdir, name))
-            # mel_tensor = mel_tensor.permute(1,2,0)
-            # mel_tensor=mel_tensor[:,2:-2,:]
 
         ######################################## ON REVERB
         
@@ -254,12 +251,6 @@ class DefaultFrontend(AbsFrontend):
             mel = np.load(os.path.join(self.base_mels_path, name + '.npy'))
             mel_tensor = torch.from_numpy(mel).to(input_feats.device).permute(0,2,1)[:,:input_feats.shape[1],:]
             logging.info("mel_tensor: " + str(mel_tensor))
-            # mel_tensor = torch.exp(mel_tensor)
-            # logging.info("after exp: " + str(mel_tensor))
-            # input_feats = torch.exp(input_feats)
-            # mel_tensor = (mel_tensor + input_feats)*0.5
-            # mel_tensor = torch.log(mel_tensor)
-            # logging.info("after adding input_feats: " + str(mel_tensor))
         
         ######################################## ON Anker
         if 'Anker' in self.base_mels_path:
@@ -268,14 +259,12 @@ class DefaultFrontend(AbsFrontend):
             mel = np.load(os.path.join(self.base_mels_path, name + '.npy'))
             logging.info("enhanced_mel: " + str(mel.shape))
             mel_tensor = torch.from_numpy(mel).to(input_feats.device).permute(0,2,1)[:,:input_feats.shape[1],:]
-            # np.save(os.path.join(self.base_mels_path, name + '_mel.npy'), mel_tensor.numpy())
-            # logging.info("mel_tensor: " + str(mel_tensor))
 
-        name = name[2:-2]
-        logging.info("name: " + str(name))
-        mel = np.load(os.path.join(self.base_mels_path, name + '.npy')) * np.log(10)
-        # logging.info("enhanced_mel: " + str(mel.shape))
-        mel_tensor = torch.from_numpy(mel)
+        # name = name[2:-2]
+        # logging.info("name: " + str(name))
+        # mel = np.load(os.path.join(self.base_mels_path, name + '.npy')) * np.log(10)
+        # # logging.info("enhanced_mel: " + str(mel.shape))
+        # mel_tensor = torch.from_numpy(mel)
 
         mean = mel_tensor.mean(dim=1, keepdim=True)
         logging.info("Mean mel_tensor: " + str(mean))

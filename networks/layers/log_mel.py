@@ -1,7 +1,7 @@
 '''
 Author: FnoY fangying@westlake.edu.cn
 LastEditors: FnoY0723 fangying@westlake.edu.cn
-LastEditTime: 2025-01-21 16:26:03
+LastEditTime: 2025-01-24 17:54:17
 FilePath: /InASR/networks/layers/log_mel.py
 '''
 from typing import Tuple
@@ -71,7 +71,7 @@ class LogMel(torch.nn.Module):
         
         mel_feat = torch.clamp(mel_feat, min=1e-10) 
         # mel_feat = torch.clamp(mel_feat, min=1e-5)
-        self.log_base = 10.0
+
         if self.log_base is None:
             logmel_feat = mel_feat.log()
         elif self.log_base == 2.0:
