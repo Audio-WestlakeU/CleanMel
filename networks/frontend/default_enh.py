@@ -105,7 +105,7 @@ class DefaultFrontend(AbsFrontend):
         # self.base_mels_path = "/data/home/fangying/enh_data/96-96-10-pad0/log_mel_norm__et_real_1ch"
         # self.base_mels_path = "/data/home/fangying/sn_enh_mel/CHIME_MFSN_eps100/simu"
 
-        self.base_mels_path = "/data/home/fangying/sn_enh_mel/mels/8xCleanMel_Hid96_offline_mrm_weightavg89-99"
+        self.base_mels_path = "/data/home/fangying/sn_enh_mel/mels/8xCleanMel_dp_L1_weightavg89-99"
         # self.base_mels_path = "/data/home/fangying/enh_data/reverb_dt_real"
         # self.base_mels_path = "/data/home/fangying/enh_data/reverb_enhanced/log-mel/logmel-et_real_1ch_"
         # self.base_mels_path = "/data/home/fangying/enh_data/en-asr-offline/mel_log_offline/log_mel_dt_real_1ch"

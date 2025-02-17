@@ -4,4 +4,4 @@ logmel_test
 examples/realman/results
 *.flac
 requirements_2.txt
-examples/reverb/*/*/logdir
+examples/*/whisper*outputs/

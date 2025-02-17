@@ -1,7 +1,7 @@
 '''
 Author: FnoY fangying@westlake.edu.cn
 LastEditors: FnoY0723 fangying@westlake.edu.cn
-LastEditTime: 2025-01-14 13:58:56
+LastEditTime: 2025-02-16 19:58:39
 FilePath: /InASR/examples/realman/codes/0_inference.py
 '''
 
@@ -35,7 +35,7 @@ parser = argparse.ArgumentParser(description='Test path and Output path.')
 parser.add_argument('--json_file', type=str, default=os.path.join("./examples/realman/results", '4xSPB_Hid96_fixnorm_offline_ensemble89-99.json'), help='Output path.')
 args = parser.parse_args()
 
-# test_tar = "/data/home/fangying/sn_enh_mel/mels/SpatialNet_mamba_ASR/RealMAN_highsnr"
+# test_tar = "/data/home/fangying/sn_enh_mel/mels/8xCleanMel_Hid96_offline_mrm_wav_weightavg89-99/RealMAN"
 test_tar = "/data/home/RealisticAudio/RealMAN_modified/test/ma_noisy_speech"
 # 
 # 配置日志记录

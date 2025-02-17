@@ -2,7 +2,7 @@
 ###
  # @Author: FnoY fangying@westlake.edu.cn
  # @LastEditors: FnoY0723 fangying@westlake.edu.cn
- # @LastEditTime: 2024-10-28 13:04:48
+ # @LastEditTime: 2025-02-17 11:10:48
  # @FilePath: /InASR/examples/chime4/evaluate_via_whisper.sh
 ### 
 # Set bash to 'debug' mode, it will exit on :
@@ -11,14 +11,13 @@ set -e
 set -u
 set -o pipefail
 
-whisper_tag=medium    # whisper model tag, e.g., small, medium, large, etc
+whisper_tag=large-v2    # whisper model tag, e.g., small, medium, large, etc
 cleaner=whisper_en
 hyp_cleaner=whisper_en
 nj=1
-test_sets="et05_real_isolated_1ch_track"
+test_sets="et05_real_isolated_1ch_track et05_simu_isolated_1ch_track"
 # decode_options is used in Whisper model's transcribe method
 decode_options="{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}"
-whisper_dir="/data/home/fangying/espnet/egs2/reverb/asr1/whisper-medium_outputs/et_real_1ch/models/medium.pt"
 
 for x in ${test_sets}; do
     wavscp=./examples/chime4/data/${x}/wav.scp    # path to wav.scp
@@ -27,7 +26,6 @@ for x in ${test_sets}; do
 
     utils/evaluate_asr.sh \
         --whisper_tag ${whisper_tag} \
-        --whisper_dir ${whisper_dir} \
         --nj ${nj} \
         --gpu_inference true \
         --inference_nj 8 \
