@@ -5,3 +5,4 @@ examples/realman/results
 *.flac
 requirements_2.txt
 examples/*/whisper*outputs/
+utils/sctk*/

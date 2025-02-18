@@ -11,13 +11,13 @@ set -e
 set -u
 set -o pipefail
 
-cd /home/fangying/InASR
+cd /data/home/fangying/InASR/
 
-whisper_tag=large-v2    # whisper model tag, e.g., small, medium, large, etc
+whisper_tag=medium    # whisper model tag, e.g., small, medium, large, etc
 cleaner=whisper_en
 hyp_cleaner=whisper_en
 nj=1
-test_sets="et_simu_1ch_wav"
+test_sets="et_real_1ch_wpy"
 # decode_options is used in Whisper model's transcribe method
 decode_options="{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}"
 
@@ -40,5 +40,3 @@ for x in ${test_sets}; do
         ${wavscp} \
         ${outdir}
 done
-
-utils/score_reverb_whisper.sh "./examples/reverb/whisper-${whisper_tag}_outputs"
