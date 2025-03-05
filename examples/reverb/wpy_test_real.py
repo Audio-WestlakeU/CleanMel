@@ -23,7 +23,7 @@ for i,newname in enumerate(test_list):
     f.close()
     
     time.sleep(1)
-    os.system(f"CUDA_VISIBLE_DEVICES=5 ./examples/reverb/evaluate_via_whisper.sh")
+    os.system(f"CUDA_VISIBLE_DEVICES=5 ./examples/reverb/evaluate_via_whisper_real.sh")
     time.sleep(1)
 
     if os.path.exists("./examples/reverb/whisper-medium_outputs/et_real_1ch_wpy"):

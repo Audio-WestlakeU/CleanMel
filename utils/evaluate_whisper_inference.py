@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import sys
-sys.path.append('/data/home/fangying/InASR')
+sys.path.append('/home/fangying/InASR')
 import argparse
 import logging
 import os

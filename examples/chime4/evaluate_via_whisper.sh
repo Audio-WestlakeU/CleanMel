@@ -15,7 +15,7 @@ whisper_tag=large-v2    # whisper model tag, e.g., small, medium, large, etc
 cleaner=whisper_en
 hyp_cleaner=whisper_en
 nj=1
-test_sets="et05_real_isolated_1ch_track et05_simu_isolated_1ch_track"
+test_sets="et05_simu_isolated_1ch_track"
 # decode_options is used in Whisper model's transcribe method
 decode_options="{language: en, task: transcribe, temperature: 0, beam_size: 10, fp16: False}"
 
