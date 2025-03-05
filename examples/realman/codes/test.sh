@@ -20,16 +20,16 @@ dirArray+=("$mel_path")
 
 snr_level="$2"
 if [ "$snr_level" == "highsnr" ]; then
-    sed -i "178c \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN_highsnr')" "$file"
+    sed -i "149c \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN_highsnr')" "$file"
 elif [ "$snr_level" == "lowsnr" ]; then
-    sed -i "178c \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN')" "$file"
+    sed -i "149c \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN')" "$file"
 else
     echo "Invalid SNR level"
     exit 1
 fi
 
 for i in "${dirArray[@]}"; do
-    sed -i "108c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
+    sed -i "95c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
     echo "$i"
     python ./examples/realman/codes/test.py --test_path "$i" --snr_level "$snr_level"
 done

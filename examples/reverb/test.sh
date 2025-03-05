@@ -2,7 +2,7 @@
 ###
  # @Author: FnoY fangying@westlake.edu.cn
  # @LastEditors: FnoY0723 fangying@westlake.edu.cn
- # @LastEditTime: 2025-01-16 18:29:22
+ # @LastEditTime: 2025-03-05 15:56:56
  # @FilePath: /InASR/examples/reverb/test.sh
 ### 
 set -e
@@ -19,7 +19,7 @@ dirArray+=("$mel_path")
 
 
 for i in "${dirArray[@]}"; do
-    sed -i "108c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
+    sed -i "95c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
     echo "$i"
     CUDA_VISIBLE_DEVICES=4 ./examples/reverb/run.sh --test_sets "et_real_1ch" --nj 48
     newName=$(basename "$i")
@@ -32,7 +32,7 @@ expPath="./examples/reverb/asr_train_asr_transformer4_raw_en_char_sp/decode_lm_l
 parentDir="$(dirname "$expPath")"
 
 for i in "${dirArray[@]}"; do
-    sed -i "108c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
+    sed -i "95c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
     echo "$i"
     CUDA_VISIBLE_DEVICES=4 ./examples/reverb/run.sh --test_sets "et_simu_1ch" --nj 48
     newName=$(basename "$i")

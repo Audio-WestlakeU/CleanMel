@@ -1,2 +1,2 @@
 # InASR
-For ASR inference based on espnet.
+For ASR inference with ESPnet pretrained models.

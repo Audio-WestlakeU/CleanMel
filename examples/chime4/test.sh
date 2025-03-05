@@ -19,7 +19,7 @@ dirArray+=("$mel_path")
 
 
 for i in "${dirArray[@]}"; do
-    sed -i "108c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
+    sed -i "95c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
     echo "$i"
     CUDA_VISIBLE_DEVICES=5 ./examples/chime4/run.sh --test_sets "et05_real_isolated_1ch_track" --nj 48
     newName=$(basename "$i")
@@ -32,7 +32,7 @@ expPath="./examples/chime4/asr_train_asr_e_branchformer_e10_mlp1024_linear1024_m
 parentDir="$(dirname "$expPath")"
 
 for i in "${dirArray[@]}"; do
-    sed -i "108c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
+    sed -i "95c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
     echo "$i"
     CUDA_VISIBLE_DEVICES=5 ./examples/chime4/run.sh --test_sets "et05_simu_isolated_1ch_track" --nj 48
     newName=$(basename "$i")
