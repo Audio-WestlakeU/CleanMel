@@ -1,7 +1,7 @@
 '''
 Author: FnoY fangying@westlake.edu.cn
 LastEditors: FnoY0723 fangying@westlake.edu.cn
-LastEditTime: 2025-02-16 19:58:39
+LastEditTime: 2025-03-05 16:45:09
 FilePath: /InASR/examples/realman/codes/0_inference.py
 '''
 
@@ -35,15 +35,13 @@ parser = argparse.ArgumentParser(description='Test path and Output path.')
 parser.add_argument('--json_file', type=str, default=os.path.join("./examples/realman/results", '4xSPB_Hid96_fixnorm_offline_ensemble89-99.json'), help='Output path.')
 args = parser.parse_args()
 
-# test_tar = "/data/home/fangying/sn_enh_mel/mels/8xCleanMel_Hid96_offline_mrm_wav_weightavg89-99/RealMAN"
 test_tar = "/data/home/RealisticAudio/RealMAN_modified/test/ma_noisy_speech"
-# 
-# 配置日志记录
+
 logging.basicConfig(
     filename=f'/data/home/fangying/InASR/examples/realman/results/logs/{args.json_file.split("/")[-1].split(".")[0]}.log',  # 指定日志文件名
-    filemode='a',        # 追加模式，'w' 为覆盖模式
-    format='%(asctime)s - %(levelname)s - %(message)s',  # 日志格式
-    level=logging.INFO   # 设置日志级别
+    filemode='a',        
+    format='%(asctime)s - %(levelname)s - %(message)s',  
+    level=logging.INFO   
 )
 
 
@@ -58,8 +56,8 @@ def process(files):
         from inference_enh import Speech2Text
         import string
         speech2text = Speech2Text(
-            asr_train_config='./examples/wenetspeech/asr_train_asr_raw_zh_char/config.yaml',
-            asr_model_file='./examples/wenetspeech/asr_train_asr_raw_zh_char/valid.acc.ave_10best.pth',
+            asr_train_config='./examples/realman/config.yaml',
+            asr_model_file='./examples/realman/valid.acc.ave_10best.pth',
             device="cpu",
             minlenratio=0.0,
             maxlenratio=0.0,
@@ -71,12 +69,9 @@ def process(files):
         for index, file in enumerate(files):            
             wav_path = file
             speech, rate = soundfile.read(wav_path)
-            # ma = np.max(np.abs(speech))
-            # speech = speech / ma
             speech = resampy.resample(speech, rate, fs, axis=0)
             name = file.split('/')[-1].split('.')[0]
             nbests = speech2text(name, speech)
-            # nbests = speech2text(speech)
             text, *_ = nbests[0]
             json_obj = json.dumps([wav_path, text_normalizer(text)], ensure_ascii=False)
             excep=True
@@ -106,7 +101,7 @@ if __name__ == '__main__':
         file_output.write('[\n')
 
     # gpus = list([0,1,2,3,4,7])
-    gpus = list(range(24))
+    gpus = list(range(8)) # number of jobs
     
     mp.set_start_method('spawn')
 
@@ -130,10 +125,6 @@ if __name__ == '__main__':
 
     filess = np.array_split(files, len(gpus))
 
-    # filess=[files[:len(files)//8], files[len(files)//8:len(files)//4], files[len(files)//4:len(files)//4+len(files)//8], 
-    #          files[len(files)//4+len(files)//8:len(files)//2], files[len(files)//2:len(files)//2+len(files)//8], files[len(files)//2+len(files)//8:len(files)//2+len(files)//4], 
-    #          files[len(files)//2+len(files)//4: len(files)//2+len(files)//4+len(files)//8], files[len(files)//2+len(files)//4+len(files)//8:]]
-    
     p.map(process, filess)
     p.close()
     p.join()
@@ -144,8 +135,7 @@ if __name__ == '__main__':
     last_comma_index = content.rfind(',')
     if last_comma_index != -1:
         content = content[:last_comma_index] + content[last_comma_index + 1:] + ']'
-        
-    # 将修改后的内容写回文件
+
     with open(args.json_file, 'w', encoding='utf-8') as  file_output:
         file_output.write(content)
 

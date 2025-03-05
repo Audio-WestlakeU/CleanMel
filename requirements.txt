@@ -1,4 +1,3 @@
-openai-whisper==20240930
 torch==2.4.0
 torchaudio==2.4.0
 typeguard==4.2.1

@@ -1,13 +1,26 @@
 # ASR Inference for CleanMel
-This branch provides code for performing ASR testing on enhanced mel (.npy format) using pre-trained models from ESPnet. 
+This branch provides code for performing ASR testing on enhanced mel (.npy format) using pre-trained models from [ESPnet](https://github.com/espnet/espnet) toolkit. Using this branch does not require the installation of ESPnet.
 
-If you are using models trained with other ASR toolkits (such as FunASR, WeNet, Whisper, etc.), you can also refer to the implementation in this branch. It is important to note that different ASR toolkits have varying default settings for STFT, the base of the logarithm used for mel, and the methods for normalizing mel.
+If you are using models trained with other ASR toolkits (e.g. FunASR, WeNet, Whisper, etc.), you can also refer to the implementation in this branch. It is important to note that different ASR toolkits have varying default settings for STFT, the base of the logarithm used for mel, and the methods for normalizing mel.
 
 ## Files Introduction
-
+- **examples**:
+- **enhasr_test.sh**:
+- **inference_enh.py**:
+- **networks**:
+- **utils**:
 
 ## Reproduction Process
+### Step 1: Installation
+```
+pip install -r requirements.txt
+```
 
+### Step 2: Prepare data
+
+### Step 3: Prepare models
+
+### Step 4: Inference
 
 ## Pretrained ASR Models
 Below is a detailed introduction to the specific models tested on different datasets:
