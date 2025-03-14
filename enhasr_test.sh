@@ -2,7 +2,7 @@
 ###
  # @Author: FnoY fangying@westlake.edu.cn
  # @LastEditors: FnoY0723 fangying@westlake.edu.cn
- # @LastEditTime: 2025-03-05 15:51:38
+ # @LastEditTime: 2025-03-14 11:12:27
  # @FilePath: /InASR/enhasr_test.sh
 ### 
 set -e
@@ -10,8 +10,6 @@ set -u
 
 mel_path="$1"
 echo "Processing ${mel_path}"
-
-cd /data/home/fangying/InASR/
 
 echo ""
 echo "Testing on RealMan lowsnr"

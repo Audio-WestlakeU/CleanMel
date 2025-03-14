@@ -53,23 +53,6 @@ try:
 except ImportError:
     is_transformers_available = False
 
-import os
-from matplotlib import pyplot as plt
-from matplotlib.ticker import MaxNLocator
-import librosa
-import librosa.display
-
-import math
-from matplotlib import font_manager
-my_font = font_manager.FontProperties(fname="/usr/share/fonts/truetype/wqy/wqy-microhei.ttc")
-
-
-colors = []
-for i in range(20):
-    hue = i / 20
-    color = plt.cm.hsv(hue)
-    colors.append(color)
-
 
 class Speech2Text:
     """Speech2Text class
@@ -386,8 +369,6 @@ class Speech2Text:
         self.enh_s2t_task = enh_s2t_task
         self.multi_asr = multi_asr
 
-        self.draw = False
-        self.k=0
 
     @torch.no_grad()
     def __call__(
@@ -414,41 +395,6 @@ class Speech2Text:
         if isinstance(speech, np.ndarray):
             speech = torch.tensor(speech)
 
-        if self.draw:
-            from matplotlib import gridspec
-            y = speech.cpu().numpy()
-            sr = 16000
-            # 计算短时傅里叶变换（STFT）
-            hop_length = 128
-            n_fft = 512
-            stft = librosa.stft(y, n_fft=n_fft, hop_length=hop_length)
-
-            # 计算功率谱
-            power = np.abs(stft)**2
-            # 绘制spectrogram
-            freqs = librosa.fft_frequencies(sr=sr, n_fft=n_fft)
-            times = librosa.frames_to_time(np.arange(power.shape[1]), sr=sr, hop_length=hop_length)
-
-            # 指定要截取的频率范围
-            fmax = 4000  # Hz
-
-            # 获取要截取的频率范围的索引
-            idx_max = np.argmin(np.abs(freqs - fmax))
-
-            # 截取指定频率范围的功率谱
-            power_crop =power[:idx_max, :]
-
-            plt.figure(figsize=(10, 8))
-            spec = gridspec.GridSpec(ncols=1, nrows=2,
-                            height_ratios=[1, 1])
-            plt.subplot(spec[0])
-            librosa.display.specshow(librosa.power_to_db(power_crop, ref=np.max), y_axis='mel', x_axis='time', fmin = 0, fmax = 80,sr=sr, hop_length=hop_length)
-            plt.xlabel('Time (s)')
-            plt.ylabel('Frequency')
-            yticks = [0, 20, 40, 60, 80]
-            ytick_labels = [0, 20, 40, 60, 80]
-            plt.yticks(yticks, ytick_labels)
-
         # data: (Nsamples,) -> (1, Nsamples)
         speech = speech.unsqueeze(0).to(getattr(torch, self.dtype))
         # lengths: (1,)
@@ -461,34 +407,6 @@ class Speech2Text:
 
         # b. Forward Encoder
         enc, enclen = self.asr_model.encode(name, **batch)
-
-        ys_hat_posterior = (self.asr_model.ctc.softmax(enc).data)[0].cpu()
-        # logging.info(f'ys_hat_posterior: {ys_hat_posterior.shape}')
-        ys_hat = (self.asr_model.ctc.argmax(enc).data)[0].tolist()
-        no_repeat_ys_hat = list(set(ys_hat))
-        # logging.info(f'no_repeat_ys_hat: {no_repeat_ys_hat}')
-        token = self.converter.ids2tokens(no_repeat_ys_hat)
-
-        if self.draw:
-            plt.subplot(spec[1])
-            # alpha0 = scalar_importance[0].squeeze()
-            # plt.plot(alpha0, color='cyan',linewidth=2)
-            for i in range(len(token)):
-                if token[i] == '<blank>':
-                    # plt.plot(ys_hat_posterior[:, no_repeat_ys_hat[i]], color=colors[i], linestyle='dashed', linewidth=1)
-                    continue
-                plt.plot(ys_hat_posterior[:,no_repeat_ys_hat[i]], color=colors[i], linewidth=1)
-                text = self.tokenizer.tokens2text(token[i])
-                plt.text(torch.argmax(ys_hat_posterior[:, no_repeat_ys_hat[i]])-2, 1.05, 'b' if text == '<blank>' else text, color='black', fontproperties=my_font, fontsize=15)
-            # plt.vlines(scalar_importance[1], 0, 1, linestyles='dashed', colors='red')
-            plt.ylim(0,1.2)
-            plt.xlim(0,enc.shape[1]-1)
-           
-            image_dir = "./inference_delay_comparison_0509/causal_attention_auxiliary_training_images"
-            if not os.path.exists(image_dir):
-                os.makedirs(image_dir)
-            plt.savefig(os.path.join(image_dir,f'hyp_{self.k}.png'))
-            self.k = self.k+1
 
         if self.multi_asr:
             enc = enc.unbind(dim=1)  # (batch, num_inf, ...) -> num_inf x [batch, ...]

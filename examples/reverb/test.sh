@@ -8,7 +8,6 @@
 set -e
 set -u
 
-enhPath="/data/home/fangying/sn_enh_mel"
 expPath="./examples/reverb/asr_train_asr_transformer4_raw_en_char_sp/decode_lm_lm_train_lm_transformer_en_char_valid.loss.ave_10best_asr_model_valid.acc.ave_10best/et_real_1ch"
 parentDir="$(dirname "$expPath")"
 file="./networks/frontend/default_enh.py"

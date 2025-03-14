@@ -2,13 +2,12 @@
 ###
  # @Author: FnoY fangying@westlake.edu.cn
  # @LastEditors: FnoY0723 fangying@westlake.edu.cn
- # @LastEditTime: 2024-10-22 15:37:26
+ # @LastEditTime: 2025-03-14 12:03:11
  # @FilePath: /InASR/examples/chime4/test.sh
 ### 
 set -e
 set -u
 
-enhPath="/data/home/fangying/sn_enh_mel"
 expPath="./examples/chime4/asr_train_asr_e_branchformer_e10_mlp1024_linear1024_macaron_lr1e-3_warmup25k_raw_en_char_sp/decode_asr_lm_lm_train_lm_transformer_en_char_valid.loss.ave_asr_model_valid.acc.ave_10best/et05_real_isolated_1ch_track"
 parentDir="$(dirname "$expPath")"
 file="./networks/frontend/default_enh.py"

@@ -148,13 +148,6 @@ class DefaultFrontend(AbsFrontend):
             if 'RealMAN' not in self.base_mels_path:
                 self.base_mels_path = os.path.join(self.base_mels_path, 'RealMAN')
  
-        elif 'MEETING' in name:
-            if 'WenetSpeech' not in self.base_mels_path:
-                self.base_mels_path = os.path.join(self.base_mels_path, 'WenetSpeech')
-        else:
-            if 'HKUST' not in self.base_mels_path:
-                self.base_mels_path = os.path.join(self.base_mels_path, 'HKUST')
-        
         logging.info(f"self.base_mels_path: {self.base_mels_path}")
         ######################################## ON CHIME-4
         if 'CHIME' in self.base_mels_path:

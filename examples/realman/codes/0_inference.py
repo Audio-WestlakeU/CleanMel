@@ -1,7 +1,7 @@
 '''
 Author: FnoY fangying@westlake.edu.cn
 LastEditors: FnoY0723 fangying@westlake.edu.cn
-LastEditTime: 2025-03-05 16:45:09
+LastEditTime: 2025-03-14 11:51:48
 FilePath: /InASR/examples/realman/codes/0_inference.py
 '''
 
