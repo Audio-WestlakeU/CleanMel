@@ -1,4 +1,5 @@
 *.pth
 examples/*/*/decode*
 logmel_test
-__pycache__/
+**/__pycache__/
+**/RESULTS.md

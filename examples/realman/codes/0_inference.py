@@ -1,7 +1,7 @@
 '''
 Author: FnoY fangying@westlake.edu.cn
 LastEditors: FnoY0723 fangying@westlake.edu.cn
-LastEditTime: 2025-03-14 11:51:48
+LastEditTime: 2025-03-25 09:44:55
 FilePath: /InASR/examples/realman/codes/0_inference.py
 '''
 
@@ -37,8 +37,11 @@ args = parser.parse_args()
 
 test_tar = "/data/home/RealisticAudio/RealMAN_modified/test/ma_noisy_speech"
 
+if not os.path.exists(os.path.join("./examples/realman/results", 'logs')):
+    os.makedirs(os.path.join("./examples/realman/results", 'logs'))
+
 logging.basicConfig(
-    filename=f'/data/home/fangying/InASR/examples/realman/results/logs/{args.json_file.split("/")[-1].split(".")[0]}.log',  # 指定日志文件名
+    filename=f'./examples/realman/results/logs/{args.json_file.split("/")[-1].split(".")[0]}.log',  
     filemode='a',        
     format='%(asctime)s - %(levelname)s - %(message)s',  
     level=logging.INFO   
@@ -56,8 +59,8 @@ def process(files):
         from inference_enh import Speech2Text
         import string
         speech2text = Speech2Text(
-            asr_train_config='./examples/realman/config.yaml',
-            asr_model_file='./examples/realman/valid.acc.ave_10best.pth',
+            asr_train_config='./examples/realman/asr_train_asr_raw_zh_char/config.yaml',
+            asr_model_file='./examples/realman/asr_train_asr_raw_zh_char/valid.acc.ave_10best.pth',
             device="cpu",
             minlenratio=0.0,
             maxlenratio=0.0,
@@ -101,7 +104,7 @@ if __name__ == '__main__':
         file_output.write('[\n')
 
     # gpus = list([0,1,2,3,4,7])
-    gpus = list(range(8)) # number of jobs
+    gpus = list(range(24)) # number of jobs
     
     mp.set_start_method('spawn')
 

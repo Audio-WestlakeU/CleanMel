@@ -12,11 +12,6 @@ file="./networks/frontend/default_enh.py"
 declare -a dirArray
 mel_path="$1"
 dirArray+=("$mel_path")
-# dirArray+=("/data/home/fangying/sn_enh_mel/mels/8xSPB_Hid128_offline_real_rts_ensemble139-149")
-
-# for d in $(ls -d "$enhPath"/*/); do
-#     dirArray+=("$d")
-# done
 
 snr_level="$2"
 if [ "$snr_level" == "highsnr" ]; then

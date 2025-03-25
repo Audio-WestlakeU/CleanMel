@@ -92,7 +92,7 @@ class DefaultFrontend(AbsFrontend):
         self.n_mels = n_mels
         self.frontend_type = "default"
 
-        self.base_mels_path = "/data/home/fangying/sn_enh_mel/mels/8xCleanMel_dp_L1_weightavg89-99"
+        self.base_mels_path = "/data/home/fangying/sn_enh_mel/mels/16CleanMel_Hid144_offline_dp_L1_weightavg139-149"
 
 
     def output_size(self) -> int:
