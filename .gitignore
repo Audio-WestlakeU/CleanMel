@@ -3,4 +3,8 @@ examples/*/*/decode*
 logmel_test
 **/__pycache__/
 **/RESULTS.md
-examples/realman/results/*
+examples/realman/results/logs 
+**/16*.trn
+**/16*.txt
+**/results_*
+*.json

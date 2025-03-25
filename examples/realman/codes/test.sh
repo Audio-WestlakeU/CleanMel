@@ -26,5 +26,5 @@ fi
 for i in "${dirArray[@]}"; do
     sed -i "95c \ \ \ \ \ \ \ \ self.base_mels_path = \"$i\"" "$file"
     echo "$i"
-    python ./examples/realman/codes/test.py --test_path "$i" --snr_level "$snr_level"
+    python ./examples/realman/codes/test.py --test_path "$i" --snr_level "$snr_level" --skip_inference False
 done

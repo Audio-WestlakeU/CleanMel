@@ -16,7 +16,7 @@ def extract_lines(source_path, destination_path, keyword):
         f.write(f'{os.path.basename(source_path)}\n{filtered_lines[0]}')
 
 
-for mode in ['static', 'moving']:
+for mode in ['static']:
     scenes_path = f'./examples/realman/results/{mode}'
     scenes = [name for name in os.listdir(scenes_path) if os.path.isdir(os.path.join(scenes_path, name))]
     scenes.sort()
@@ -50,7 +50,7 @@ for mode in ['static', 'moving']:
 import pandas as pd
 import re
 
-for mode in ['static', 'moving']:
+for mode in ['static']:
     txt_path = f'./examples/realman/results/{mode}/summary.txt'
     md_path = txt_path.replace('.txt', '.md')
 
