@@ -5,7 +5,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/Audio-WestlakeU/CleanMel)](https://github.com/Audio-WestlakeU/CleanMel/issues)
 [![Contact](https://img.shields.io/badge/💌-Contact-purple)](https://saoyear.github.io)
 
-PyTorch implementation of "CleanMel: Mel-Spectrogram Enhancement for Improving Both Speech Quality and ASR" (accepted by IEEE Trans. ASLPRO, 2025).
+PyTorch implementation of "CleanMel: Mel-Spectrogram Enhancement for Improving Both Speech Quality and ASR" [accepted by IEEE Trans. ASLPRO (TASLP), 2025].
 
 ## Notice 📢
 - The CleanMel model checkpoints are now available on huggingface, the inference can be done using one-line commands.
@@ -98,14 +98,15 @@ pretrained/
 
 ## Citation 📝
 ```bibtex
-@misc{shao2025cleanmel,
-    title={CleanMel: Mel-Spectrogram Enhancement for Improving Both Speech Quality and ASR}, 
-    author={Nian Shao and Rui Zhou and Pengyu Wang and Xian Li and Ying Fang and Yujie Yang and Xiaofei Li},
-    year={2025},
-    eprint={2502.20040},
-    archivePrefix={arXiv},
-    primaryClass={eess.AS},
-    url={https://arxiv.org/abs/2502.20040}
+@ARTICLE{11097896,
+  author={Shao, Nian and Zhou, Rui and Wang, Pengyu and Li, Xian and Fang, Ying and Yang, Yujie and Li, Xiaofei},
+  journal={IEEE Transactions on Audio, Speech and Language Processing}, 
+  title={CleanMel: Mel-Spectrogram Enhancement for Improving Both Speech Quality and ASR}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-13},
+  doi={10.1109/TASLPRO.2025.3592333}}
 }
 ```
 
