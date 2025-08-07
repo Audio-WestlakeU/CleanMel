@@ -103,9 +103,9 @@ pretrained/
   journal={IEEE Transactions on Audio, Speech and Language Processing}, 
   title={CleanMel: Mel-Spectrogram Enhancement for Improving Both Speech Quality and ASR}, 
   year={2025},
-  volume={},
+  volume={33},
   number={},
-  pages={1-13},
+  pages={3202-3214},
   doi={10.1109/TASLPRO.2025.3592333}}
 }
 ```
